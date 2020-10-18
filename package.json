@@ -4,7 +4,9 @@
   "description": "playing with node.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "set DEBUG=app & nodemon app.js",
+    "lint": "eslint app.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,22 @@
     "debug": "^4.2.0",
     "express": "^4.17.1",
     "jquery": "^3.5.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb-base": "14.2.0",
+    "eslint-plugin-import": "^2.22.1"
+  },
+  "nodemonConfig":{
+    "restartable":"rs",
+    "ignore":["node_modules/**/node_modules"],
+    "delay":"2500",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 4000
+    }
+
   }
 }
