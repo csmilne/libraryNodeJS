@@ -19,7 +19,13 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
     //res.sendfile(path.join(__dirname, '/Views/index.html'));
-    res.render('index', {list: ['a','b'], title: 'Library'});
+    res.render(
+        'index',
+        {
+            nav: [{ link: '/books', title: 'Books' },
+            { link: '/authors', title: 'Authors' }],
+            title: 'Library'
+        });
 });
 
 app.listen(port, () => {
